@@ -7,13 +7,35 @@ const WaIcon = ({ className }) => (
   </svg>
 )
 
+function Logo({ size = 'md' }) {
+  const [err, setErr] = useState(false)
+  const h = size === 'sm' ? 'h-8' : 'h-10'
+  if (!err) {
+    return (
+      <div className="bg-white rounded-xl px-2 py-1 shadow-sm shadow-white/10 flex-shrink-0">
+        <img
+          src="/logo.png"
+          alt="Z&J Sport"
+          className={`${h} w-auto object-contain`}
+          onError={() => setErr(true)}
+        />
+      </div>
+    )
+  }
+  return (
+    <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30 flex-shrink-0">
+      <span className="text-white font-black text-xl leading-none">Z</span>
+    </div>
+  )
+}
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -26,9 +48,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-gray-950/95 backdrop-blur-md shadow-lg shadow-black/30 border-b border-gray-900'
+          ? 'bg-gray-950/95 backdrop-blur-xl shadow-2xl shadow-black/40 border-b border-white/5'
           : 'bg-transparent'
       }`}
     >
@@ -36,21 +58,19 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           <a href="#" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
-              <span className="text-black font-black text-xl leading-none">Z</span>
-            </div>
-            <div className="leading-none">
-              <p className="font-black text-white text-lg">Z&amp;J Sport</p>
-              <p className="text-blue-600 text-xs font-semibold tracking-wide">Calatex Indumentaria</p>
+            <Logo />
+            <div className="leading-none hidden sm:block">
+              <p className="font-black text-white text-base tracking-tight">Z&amp;J Sport</p>
+              <p className="text-blue-400 text-xs font-semibold tracking-wider uppercase">Calatex Indumentaria</p>
             </div>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-400 hover:text-blue-600 transition-colors font-medium text-sm"
+                className="text-gray-400 hover:text-white hover:bg-white/5 px-4 py-2 rounded-xl transition-all font-medium text-sm"
               >
                 {link.label}
               </a>
@@ -62,7 +82,7 @@ export default function Header() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-600/30 flex items-center gap-2"
+              className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-600/40 flex items-center gap-2"
             >
               <WaIcon className="w-4 h-4" />
               <span className="hidden sm:inline">WhatsApp</span>
@@ -70,28 +90,26 @@ export default function Header() {
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-gray-400 hover:text-white p-1"
+              className="md:hidden text-gray-400 hover:text-white p-2 rounded-xl hover:bg-white/5 transition-all"
               aria-label="Menú"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {menuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen
+                  ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
               </svg>
             </button>
           </div>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-gray-900 border border-gray-800 rounded-2xl mb-4 p-4 flex flex-col gap-1">
+          <div className="md:hidden bg-gray-900/95 backdrop-blur-xl border border-white/8 rounded-2xl mb-4 p-3 flex flex-col gap-1 shadow-2xl">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-gray-300 hover:text-blue-600 hover:bg-gray-800 py-3 px-4 rounded-xl font-medium transition-colors"
+                className="text-gray-300 hover:text-white hover:bg-white/5 py-3 px-4 rounded-xl font-medium transition-all text-sm"
               >
                 {link.label}
               </a>

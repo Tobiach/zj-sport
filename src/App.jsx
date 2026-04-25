@@ -5,6 +5,7 @@ import Catalog from './components/Catalog'
 import HowItWorks from './components/HowItWorks'
 import OrderForm from './components/OrderForm'
 import Trust from './components/Trust'
+import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
@@ -31,11 +32,11 @@ export default function App() {
         <Hero onArmarPedido={scrollToForm} />
         <Catalog onSelectProduct={handleSelectProduct} />
         <HowItWorks />
-        <OrderForm selectedProduct={selectedProduct} formRef={formRef} />
         <Trust />
+        <Testimonials />
+        <OrderForm selectedProduct={selectedProduct} formRef={formRef} />
         <Contact />
       </main>
-      {/* pb-24 on mobile to avoid content hidden behind floating CTA */}
       <div className="pb-20 md:pb-0">
         <Footer />
       </div>
