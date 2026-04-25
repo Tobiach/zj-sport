@@ -12,87 +12,79 @@ export default function Contact() {
   )
 
   return (
-    <section id="contacto" className="py-14 sm:py-20 bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-green-500 font-semibold text-sm uppercase tracking-widest">Contacto</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">
-            Estamos para ayudarte
+    <section id="contacto" className="py-12 sm:py-20 bg-[#080808]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* CTA block */}
+        <div
+          className="rounded-3xl p-8 sm:p-12 text-center mb-8"
+          style={{ background: 'linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03))', border: '1px solid rgba(34,197,94,0.15)' }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+            ¿Tenés un equipo que vestir?
           </h2>
-          <p className="text-gray-400 mt-4">
-            Respondemos rápido. No tenés que esperar para arrancar.
+          <p className="text-gray-400 text-sm sm:text-base mb-6 max-w-md mx-auto">
+            Contanos qué necesitás. Sin compromiso, sin demoras.
           </p>
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${quickMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-black font-black px-8 py-4 rounded-2xl text-base transition-all hover:scale-105 hover:shadow-2xl hover:shadow-green-500/30 w-full sm:w-auto"
+          >
+            <WaIcon className="w-5 h-5" />
+            Hablar por WhatsApp
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12">
+        {/* Info row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-gray-900 hover:bg-green-500 border border-gray-800 hover:border-green-500 rounded-2xl p-6 text-center transition-all duration-300"
+            className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 hover:border-green-500/30 rounded-2xl p-4 transition-all"
           >
-            <div className="w-12 h-12 bg-green-500/10 group-hover:bg-black/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors">
-              <WaIcon className="w-6 h-6 text-green-500 group-hover:text-black" />
+            <div className="w-9 h-9 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <WaIcon className="w-4 h-4 text-green-500" />
             </div>
-            <h3 className="font-bold text-white group-hover:text-black mb-1 transition-colors">WhatsApp</h3>
-            <p className="text-gray-400 group-hover:text-black/70 text-sm transition-colors">Respuesta en minutos</p>
+            <div className="min-w-0">
+              <p className="text-white text-sm font-semibold">WhatsApp</p>
+              <p className="text-gray-500 text-xs">Respuesta en minutos</p>
+            </div>
           </a>
 
           <a
             href="https://instagram.com/eze_medias_sport"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-pink-500/40 rounded-2xl p-6 text-center transition-all duration-300"
+            className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 hover:border-pink-500/30 rounded-2xl p-4 transition-all"
           >
-            <div className="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+            <div className="w-9 h-9 bg-pink-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
             </div>
-            <h3 className="font-bold text-white mb-1">@eze_medias_sport</h3>
-            <p className="text-gray-400 text-sm">Seguinos en Instagram</p>
+            <div className="min-w-0">
+              <p className="text-white text-sm font-semibold">@eze_medias_sport</p>
+              <p className="text-gray-500 text-xs">Instagram</p>
+            </div>
           </a>
 
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center">
-            <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 rounded-2xl p-4">
+            <div className="w-9 h-9 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="font-bold text-white mb-1">González Catán</h3>
-            <p className="text-gray-400 text-sm">Pje. Trujillo, B1759</p>
-            <p className="text-gray-400 text-sm">Buenos Aires, Argentina</p>
-            <div className="mt-3 inline-flex items-center gap-1.5 bg-green-500/10 border border-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
-              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-              Lun–Vie · 9:00 a 18:00
+            <div className="min-w-0">
+              <p className="text-white text-sm font-semibold">González Catán, GBA</p>
+              <p className="text-gray-500 text-xs">Lun–Vie · 9:00–18:00</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-green-500/10 via-green-500/5 to-transparent border border-green-500/20 rounded-2xl p-8 sm:p-12 text-center">
-          <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-            ¿Tenés un equipo que vestir?
-          </h3>
-          <p className="text-gray-400 mb-8 max-w-xl mx-auto leading-relaxed">
-            Contanos qué necesitás y te armamos una propuesta sin compromiso. Atención directa, sin burocracia, precio justo.
-          </p>
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${quickMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-green-500/25"
-          >
-            <WaIcon className="w-5 h-5" />
-            Hablar con nosotros ahora
-          </a>
-          <p className="text-gray-600 text-sm mt-4">
-            También podés escribirnos a{' '}
-            <a href="mailto:eg892742@gmail.com" className="text-gray-500 hover:text-green-500 transition-colors">
-              eg892742@gmail.com
-            </a>
-          </p>
-        </div>
       </div>
     </section>
   )

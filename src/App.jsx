@@ -7,6 +7,7 @@ import OrderForm from './components/OrderForm'
 import Trust from './components/Trust'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingCTA from './components/FloatingCTA'
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState('')
@@ -34,7 +35,11 @@ export default function App() {
         <Trust />
         <Contact />
       </main>
-      <Footer />
+      {/* pb-24 on mobile to avoid content hidden behind floating CTA */}
+      <div className="pb-20 md:pb-0">
+        <Footer />
+      </div>
+      <FloatingCTA />
     </div>
   )
 }
