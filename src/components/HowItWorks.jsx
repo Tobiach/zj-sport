@@ -37,7 +37,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-8 sm:mb-12">
-          <span className="text-green-500 font-semibold text-xs uppercase tracking-widest">Proceso</span>
+          <span className="text-blue-600 font-semibold text-xs uppercase tracking-widest">Proceso</span>
           <h2 className="text-2xl sm:text-4xl font-black text-white mt-2">
             Pedir es simple
           </h2>
@@ -47,12 +47,12 @@ export default function HowItWorks() {
         <div className="sm:hidden space-y-3">
           {steps.map((step) => (
             <div key={step.number} className="flex items-start gap-4 bg-[#0d0d0d] border border-white/5 rounded-2xl p-4">
-              <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 text-black shadow-lg shadow-green-500/20">
+              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-lg shadow-blue-600/20">
                 {step.icon}
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-green-500/50 text-xs font-black">{step.number}</span>
+                  <span className="text-blue-600/50 text-xs font-black">{step.number}</span>
                   <h3 className="text-white font-bold text-sm">{step.title}</h3>
                 </div>
                 <p className="text-gray-500 text-xs leading-relaxed">{step.description}</p>
@@ -66,15 +66,15 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div key={step.number} className="relative">
               {index < steps.length - 1 && (
-                <div className="hidden sm:block absolute top-10 left-full w-full h-px bg-gradient-to-r from-green-500/30 to-transparent z-0 -translate-x-8" />
+                <div className="hidden sm:block absolute top-10 left-full w-full h-px bg-gradient-to-r from-blue-600/30 to-transparent z-0 -translate-x-8" />
               )}
-              <div className="bg-[#0d0d0d] border border-white/5 hover:border-green-500/20 rounded-2xl p-8 text-center transition-all duration-300 relative z-10 group">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-2xl text-black mb-5 shadow-xl shadow-green-500/20 group-hover:shadow-green-500/30 transition-shadow">
+              <div className="bg-[#0d0d0d] border border-white/5 hover:border-blue-600/20 rounded-2xl p-8 text-center transition-all duration-300 relative z-10 group">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl text-white mb-5 shadow-xl shadow-blue-600/20 group-hover:shadow-blue-600/30 transition-shadow">
                   <svg className="w-7 h-7" fill={step.number === "03" ? "currentColor" : "none"} stroke={step.number === "03" ? "none" : "currentColor"} viewBox="0 0 24 24">
                     {step.icon.props.children}
                   </svg>
                 </div>
-                <p className="text-green-500/20 font-black text-6xl absolute top-4 right-5 select-none">{step.number}</p>
+                <p className="text-blue-600/20 font-black text-6xl absolute top-4 right-5 select-none">{step.number}</p>
                 <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
               </div>

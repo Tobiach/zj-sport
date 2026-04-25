@@ -7,7 +7,7 @@ export default function Catalog({ onSelectProduct }) {
 
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 px-4">
-          <span className="text-green-500 font-semibold text-xs uppercase tracking-widest">Catálogo</span>
+          <span className="text-blue-500 font-semibold text-xs uppercase tracking-widest">Catálogo</span>
           <h2 className="text-2xl sm:text-4xl font-black text-white mt-2">
             Todo lo que tu equipo necesita
           </h2>
@@ -21,7 +21,7 @@ export default function Catalog({ onSelectProduct }) {
           {products.map((product) => (
             <div
               key={product.id}
-              className="group flex-shrink-0 w-[260px] snap-start sm:w-auto bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/5 hover:border-green-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/5 hover:-translate-y-1 flex flex-col"
+              className="group flex-shrink-0 w-[260px] snap-start sm:w-auto bg-[#0d0d0d] rounded-2xl overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-1 flex flex-col"
             >
               {/* Image */}
               <div className="relative h-44 sm:h-52 overflow-hidden flex-shrink-0">
@@ -33,7 +33,7 @@ export default function Catalog({ onSelectProduct }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent" />
                 {product.tag && (
-                  <span className="absolute top-3 left-3 bg-green-500 text-black text-xs font-black px-2.5 py-1 rounded-full">
+                  <span className="absolute top-3 left-3 bg-blue-500 text-black text-xs font-black px-2.5 py-1 rounded-full">
                     {product.tag}
                   </span>
                 )}
@@ -45,7 +45,7 @@ export default function Catalog({ onSelectProduct }) {
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4 flex-1">{product.description}</p>
                 <button
                   onClick={() => onSelectProduct(product.name)}
-                  className="w-full bg-green-500/10 hover:bg-green-500 border border-green-500/20 hover:border-transparent text-green-400 hover:text-black font-bold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm"
+                  className="w-full bg-blue-500/10 hover:bg-blue-600 border border-blue-500/20 hover:border-transparent text-blue-400 hover:text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm"
                 >
                   Pedir este producto
                 </button>

@@ -30,7 +30,7 @@ export default function Contact() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${quickMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-black font-black px-8 py-4 rounded-2xl text-base transition-all hover:scale-105 hover:shadow-2xl hover:shadow-green-500/30 w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-black px-8 py-4 rounded-2xl text-base transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/30 w-full sm:w-auto"
           >
             <WaIcon className="w-5 h-5" />
             Hablar por WhatsApp
@@ -43,10 +43,10 @@ export default function Contact() {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 hover:border-green-500/30 rounded-2xl p-4 transition-all"
+            className="flex items-center gap-3 bg-[#0d0d0d] border border-white/5 hover:border-blue-600/30 rounded-2xl p-4 transition-all"
           >
-            <div className="w-9 h-9 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <WaIcon className="w-4 h-4 text-green-500" />
+            <div className="w-9 h-9 bg-blue-600/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <WaIcon className="w-4 h-4 text-blue-600" />
             </div>
             <div className="min-w-0">
               <p className="text-white text-sm font-semibold">WhatsApp</p>

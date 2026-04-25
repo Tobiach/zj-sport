@@ -36,12 +36,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           <a href="#" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/30">
+            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
               <span className="text-black font-black text-xl leading-none">Z</span>
             </div>
             <div className="leading-none">
               <p className="font-black text-white text-lg">Z&amp;J Sport</p>
-              <p className="text-green-500 text-xs font-semibold tracking-wide">Calatex Indumentaria</p>
+              <p className="text-blue-600 text-xs font-semibold tracking-wide">Calatex Indumentaria</p>
             </div>
           </a>
 
@@ -50,7 +50,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-400 hover:text-green-500 transition-colors font-medium text-sm"
+                className="text-gray-400 hover:text-blue-600 transition-colors font-medium text-sm"
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export default function Header() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-400 text-black font-bold px-4 py-2.5 rounded-xl text-sm transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 flex items-center gap-2"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-600/30 flex items-center gap-2"
             >
               <WaIcon className="w-4 h-4" />
               <span className="hidden sm:inline">WhatsApp</span>
@@ -91,7 +91,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-gray-300 hover:text-green-500 hover:bg-gray-800 py-3 px-4 rounded-xl font-medium transition-colors"
+                className="text-gray-300 hover:text-blue-600 hover:bg-gray-800 py-3 px-4 rounded-xl font-medium transition-colors"
               >
                 {link.label}
               </a>

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <a href="#" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-black font-black text-sm">Z</span>
             </div>
             <div className="leading-none">
@@ -22,7 +22,7 @@ export default function Footer() {
               { href: "#pedido", label: "Hacer pedido" },
               { href: "#contacto", label: "Contacto" },
             ].map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-green-500 transition-colors">
+              <a key={link.href} href={link.href} className="hover:text-blue-500 transition-colors">
                 {link.label}
               </a>
             ))}
@@ -44,7 +44,7 @@ export default function Footer() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-green-500 transition-colors"
+              className="text-gray-600 hover:text-blue-500 transition-colors"
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
