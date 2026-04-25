@@ -16,8 +16,18 @@ export default function Hero({ onArmarPedido }) {
       {/* BASE: animated gradient — siempre visible, garantiza look premium */}
       <div className="absolute inset-0 hero-gradient" />
 
-      {/* VIDEO LAYER: YouTube iframe en modo background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
+      {/* IMAGE LAYER: siempre visible — base cuando el video no carga (mobile iOS) */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1400&q=85"
+          alt=""
+          className="w-full h-full object-cover object-center opacity-40"
+          loading="eager"
+        />
+      </div>
+
+      {/* VIDEO LAYER: YouTube iframe en todos los dispositivos */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_VIDEO_ID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=0`}
           title="background"
@@ -29,15 +39,6 @@ export default function Hero({ onArmarPedido }) {
           }}
           allow="autoplay; encrypted-media"
           frameBorder="0"
-        />
-      </div>
-
-      {/* VIDEO LAYER MOBILE: imagen de fondo + gradient animado visible */}
-      <div className="absolute inset-0 sm:hidden">
-        <img
-          src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80"
-          alt=""
-          className="w-full h-full object-cover object-center opacity-30"
         />
       </div>
 
@@ -92,7 +93,7 @@ export default function Hero({ onArmarPedido }) {
 
             <a
               href="#catalogo"
-              className="border border-white/15 hover:border-green-500/40 text-white/80 hover:text-white font-bold px-7 py-4 rounded-2xl text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2 backdrop-blur-sm"
+              className="border border-white/15 hover:border-blue-500/40 text-white/80 hover:text-white font-bold px-7 py-4 rounded-2xl text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2 backdrop-blur-sm"
             >
               Ver productos
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
