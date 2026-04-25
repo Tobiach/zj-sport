@@ -1,7 +1,3 @@
-// VIDEO: reemplazá VIDEO_ID por el ID de YouTube que quieras usar como fondo.
-// Ejemplo: si el link es youtube.com/watch?v=ABC123, ponés "ABC123"
-// Video ideal: https://www.youtube.com/watch?v=KCFcNXcRY_E (fútbol entrenamiento)
-const YT_VIDEO_ID = "KCFcNXcRY_E"
 
 export default function Hero({ onArmarPedido }) {
   const stats = [
@@ -26,21 +22,6 @@ export default function Hero({ onArmarPedido }) {
         />
       </div>
 
-      {/* VIDEO LAYER: YouTube iframe en todos los dispositivos */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_VIDEO_ID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=0`}
-          title="background"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{
-            width: 'max(100vw, 177.78vh)',
-            height: 'max(56.25vw, 100vh)',
-            border: 'none',
-          }}
-          allow="autoplay; encrypted-media"
-          frameBorder="0"
-        />
-      </div>
 
       {/* Overlays de profundidad */}
       <div className="absolute inset-0 bg-black/60" />
