@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Catalog from './components/Catalog'
+import ProductCarousel from './components/ProductCarousel'
 import HowItWorks from './components/HowItWorks'
 import OrderForm from './components/OrderForm'
 import Trust from './components/Trust'
@@ -30,7 +30,7 @@ export default function App() {
       <Header />
       <main>
         <Hero onArmarPedido={scrollToForm} />
-        <Catalog onSelectProduct={handleSelectProduct} />
+        <ProductCarousel onSelectProduct={handleSelectProduct} />
         <HowItWorks />
         <Trust />
         <Testimonials />
