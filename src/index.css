@@ -21,3 +21,21 @@
     display: none;
   }
 }
+
+@keyframes gradient-pulse {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+.hero-gradient {
+  background: linear-gradient(-45deg, #000000, #020f02, #000000, #041204, #000000, #0a1f0a);
+  background-size: 400% 400%;
+  animation: gradient-pulse 18s ease infinite;
+}
+
+@keyframes float-particle {
+  0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+  20%  { opacity: 0.6; }
+  80%  { opacity: 0.3; }
+  100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+}
