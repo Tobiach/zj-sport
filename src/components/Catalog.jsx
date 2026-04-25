@@ -2,7 +2,7 @@ import { products } from '../data/products'
 
 export default function Catalog({ onSelectProduct }) {
   return (
-    <section id="catalogo" className="py-20 bg-gray-950">
+    <section id="catalogo" className="py-14 sm:py-20 bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-green-500 font-semibold text-sm uppercase tracking-widest">Catálogo</span>

@@ -16,9 +16,9 @@ const features = [
 
 export default function Trust() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-14 sm:py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-20">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -51,20 +51,20 @@ export default function Trust() {
             </ul>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-6 lg:mt-0">
             <img
               src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80"
               alt="Equipo deportivo"
-              className="w-full h-80 object-cover rounded-2xl border border-gray-800"
+              className="w-full h-64 sm:h-80 object-cover rounded-2xl border border-gray-800"
               loading="lazy"
             />
-            <div className="absolute -bottom-5 -left-5 bg-green-500 rounded-2xl p-5 shadow-xl">
-              <p className="text-black font-black text-2xl leading-none">2016</p>
-              <p className="text-black/80 text-sm font-semibold mt-1">Fabricando en GBA</p>
+            <div className="absolute bottom-4 left-4 sm:-bottom-5 sm:-left-5 bg-green-500 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl">
+              <p className="text-black font-black text-xl sm:text-2xl leading-none">2016</p>
+              <p className="text-black/80 text-xs sm:text-sm font-semibold mt-0.5 sm:mt-1">Fabricando en GBA</p>
             </div>
-            <div className="absolute -top-5 -right-5 bg-gray-800 border border-gray-700 rounded-2xl p-4 shadow-xl">
-              <p className="text-white font-black text-lg leading-none">100%</p>
-              <p className="text-gray-400 text-xs mt-1">Personalizado</p>
+            <div className="absolute top-4 right-4 sm:-top-5 sm:-right-5 bg-gray-800 border border-gray-700 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl">
+              <p className="text-white font-black text-base sm:text-lg leading-none">100%</p>
+              <p className="text-gray-400 text-xs mt-0.5 sm:mt-1">Personalizado</p>
             </div>
           </div>
         </div>

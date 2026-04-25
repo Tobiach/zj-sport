@@ -1,6 +1,6 @@
 // ⚠️ REEMPLAZAR con el número real de WhatsApp (código país + número, sin +, sin espacios)
 // Ejemplo Argentina: 5491112345678
-export const WHATSAPP_NUMBER = "5491140000000"
+export const WHATSAPP_NUMBER = "5491134552996"
 
 export const buildWhatsAppMessage = (form) => {
   const lines = [

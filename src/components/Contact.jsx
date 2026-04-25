@@ -12,7 +12,7 @@ export default function Contact() {
   )
 
   return (
-    <section id="contacto" className="py-20 bg-gray-950">
+    <section id="contacto" className="py-14 sm:py-20 bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-green-500 font-semibold text-sm uppercase tracking-widest">Contacto</span>
@@ -81,7 +81,7 @@ export default function Contact() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${quickMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-green-500/25"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-green-500/25"
           >
             <WaIcon className="w-5 h-5" />
             Hablar con nosotros ahora

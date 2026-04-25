@@ -28,7 +28,7 @@ const Field = ({ label, required, error, children }) => (
 const inputClass = (hasError) =>
   `w-full bg-gray-800 border ${
     hasError ? 'border-red-500/70' : 'border-gray-700 focus:border-green-500'
-  } text-white rounded-xl px-4 py-3 focus:outline-none transition-colors placeholder-gray-600 text-sm`
+  } text-white rounded-xl px-4 py-3 focus:outline-none transition-colors placeholder-gray-600 text-base`
 
 export default function OrderForm({ selectedProduct, formRef }) {
   const [form, setForm] = useState(initialForm)
@@ -68,7 +68,7 @@ export default function OrderForm({ selectedProduct, formRef }) {
   }
 
   return (
-    <section id="pedido" ref={formRef} className="py-20 bg-gray-950">
+    <section id="pedido" ref={formRef} className="py-14 sm:py-20 bg-gray-950">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-green-500 font-semibold text-sm uppercase tracking-widest">Pedido</span>
