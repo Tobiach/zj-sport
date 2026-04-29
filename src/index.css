@@ -7,8 +7,11 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-gray-950 text-white antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-rayun-cream text-rayun-brown antialiased;
+    font-family: 'Lato', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
@@ -20,56 +23,101 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
 }
 
-/* ─── Scroll reveal ─── */
+/* ─── Scroll reveal (luxury: slower, softer) ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible {
   opacity: 1;
   transform: none;
 }
-.reveal-d1 { transition-delay: 0.08s; }
-.reveal-d2 { transition-delay: 0.16s; }
-.reveal-d3 { transition-delay: 0.24s; }
-.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d1 { transition-delay: 0.10s; }
+.reveal-d2 { transition-delay: 0.20s; }
+.reveal-d3 { transition-delay: 0.30s; }
+.reveal-d4 { transition-delay: 0.40s; }
 
-/* ─── Hero gradient background ─── */
-@keyframes gradient-pulse {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-.hero-gradient {
-  background: linear-gradient(-45deg, #000000, #010818, #000000, #020c24, #000000, #051530);
-  background-size: 400% 400%;
-  animation: gradient-pulse 18s ease infinite;
-}
-
-/* ─── Shimmer on cards ─── */
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.shimmer-border {
+/* ─── Hero parallax overlay ─── */
+.hero-overlay {
   background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.03) 25%,
-    rgba(59,130,246,0.15) 50%,
-    rgba(255,255,255,0.03) 75%
+    to bottom,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.45) 60%,
+    rgba(0,0,0,0.65) 100%
   );
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
 }
 
-/* ─── Glow pulse on CTAs ─── */
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.3); }
-  50%       { box-shadow: 0 0 40px rgba(37,99,235,0.6); }
+/* ─── Luxury fade in ─── */
+@keyframes luxury-fade {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
 }
-.glow-cta {
-  animation: glow-pulse 2.5s ease-in-out infinite;
+.luxury-fade {
+  animation: luxury-fade 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.luxury-fade-d1 { animation-delay: 0.3s; }
+.luxury-fade-d2 { animation-delay: 0.55s; }
+.luxury-fade-d3 { animation-delay: 0.8s; }
+
+/* ─── Soft glow for sage CTA ─── */
+@keyframes sage-glow {
+  0%, 100% { box-shadow: 0 4px 24px rgba(122,153,104,0.25); }
+  50%       { box-shadow: 0 4px 40px rgba(122,153,104,0.45); }
+}
+.sage-glow {
+  animation: sage-glow 3s ease-in-out infinite;
+}
+
+/* ─── Thin ornamental line ─── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #C9A87C;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+/* ─── Image zoom on hover ─── */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* ─── Gallery grid ─── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 8px;
+}
+.gallery-grid .item-tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid .item-tall {
+    grid-row: span 1;
+  }
 }

@@ -1,21 +1,20 @@
-// ⚠️ REEMPLAZAR con el número real de WhatsApp (código país + número, sin +, sin espacios)
-// Ejemplo Argentina: 5491112345678
-export const WHATSAPP_NUMBER = "5491134552996"
+export const WHATSAPP_NUMBER = '5492914679090'
 
-export const buildWhatsAppMessage = (form) => {
+export const buildReservaMessage = (form) => {
   const lines = [
-    "Hola, quiero hacer un pedido personalizado:",
-    "",
-    `📋 *Nombre:* ${form.name}`,
-    `👕 *Producto:* ${form.product}`,
-    `🔢 *Cantidad:* ${form.quantity}`,
-    form.sizes    ? `📏 *Talles:* ${form.sizes}`    : null,
-    form.colors   ? `🎨 *Colores:* ${form.colors}`  : null,
-    form.team     ? `🏟️ *Equipo/Club:* ${form.team}` : null,
-    form.customization ? `✍️ *Personalización:* ${form.customization}` : null,
-    form.date     ? `📅 *Fecha estimada:* ${form.date}` : null,
-    form.notes    ? `📝 *Observaciones:* ${form.notes}` : null,
-  ].filter(Boolean).join("\n")
+    '¡Hola! Quiero consultar disponibilidad:',
+    '',
+    `🏡 *Cabaña:* ${form.cabana || 'A definir'}`,
+    `📅 *Fecha ingreso:* ${form.ingreso}`,
+    `📅 *Fecha egreso:* ${form.egreso}`,
+    `👥 *Personas:* ${form.personas}`,
+    form.mascotas ? `🐾 *Mascotas:* ${form.mascotas}` : null,
+    `👤 *Nombre:* ${form.nombre}`,
+    form.notas ? `📝 *Consulta:* ${form.notas}` : null,
+  ].filter(Boolean).join('\n')
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`
 }
+
+export const whatsappLink = (msg = '¡Hola! Quiero consultar disponibilidad en Cabañas Rayun.') =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
